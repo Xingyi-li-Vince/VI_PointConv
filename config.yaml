@@ -1,0 +1,44 @@
+BATCH_NORM:     True
+BATCH_SIZE:     2
+USE_XYZ:        True
+USE_MLP:        False
+repeat_time:    1
+USE_WEIGHT:     True
+device:         'cuda'
+
+opt_level:     "O2"
+MAX_POINTS_NUM: 120000
+USE_MULTI_GPU:  True
+use_ASPP:       False
+NormalizedXYZ:  False
+K_forward:      8
+K_propagate:    8
+K_self:         8
+nn_interpolate: 3
+point_dim:      3
+total_epoches: 100
+
+grid_size:      [0.05, 0.1, 0.2, 0.4, 0.8, 0.8]
+base_dim:       48
+
+dialated_rate:  [1, 1, 1, 1, 1, 4]
+resblocks:      [3, 3, 3, 3, 3, 3]
+resblocks_back: [0, 0, 0, 0, 0, 0]
+
+train_data_path: '/media/xingyi/Tools4TB/PointConv_ScanNet/ScanNet_withNormal/train/*.pth'
+val_data_path:   '/media/xingyi/Tools4TB/PointConv_ScanNet/ScanNet_withNormal/val/*.pth'
+test_data_path:  '/media/xingyi/Tools4TB/PointConv_ScanNet/ScanNet_withNormal/test/*.pth'
+pretrain:        null
+optimizer:       'Adam'
+learning_rate:   0.001
+decay_rate:      0.0001
+multi_gpu:       null
+
+model_name:      'scannet_pointConv'
+experiment_dir:  './experiment/'
+test_dir:        './eval_experiment/'
+num_classes:      20
+
+classes:         ['wall', 'floor', 'cabinet', 'bed', 'chair', 'sofa', 'table', 'door',
+                  'window', 'bookshelf', 'picture', 'counter', 'desk', 'curtain',
+                  'refridgerator', 'shower curtain', 'toilet', 'sink', 'bathtub', 'otherfurniture']
