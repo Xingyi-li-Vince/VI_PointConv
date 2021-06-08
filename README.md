@@ -2,6 +2,10 @@
 
 This repository contains the official implementation of [The Devils in the Point Clouds: Studying the Robustness of Point Cloud Convolutions](https://arxiv.org/abs/2101.07832) in PyTorch.
 
+It is tested under CUDA 10.2, and PyTorch 1.6.
+The hardware is a single V100 GPU for the ScanNet experiment.
+
+
 ## A. Environment Setup
 
 1. Use Anaconda
